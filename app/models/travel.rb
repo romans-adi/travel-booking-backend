@@ -1,3 +1,3 @@
 class Travel < ApplicationRecord
-  belongs_to :place
+  has_many :places
 end
