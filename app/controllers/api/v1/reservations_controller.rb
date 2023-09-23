@@ -30,4 +30,3 @@ class Api::V1::ReservationsController < ApplicationController
     params.require(:reservation).permit(:date_of_reservation, :city, :user_id, :travel_id)
   end
 end
-end
