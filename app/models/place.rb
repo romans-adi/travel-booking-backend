@@ -1,3 +1,3 @@
 class Place < ApplicationRecord
-  belongs_to :travel
+  has_one :travel
 end

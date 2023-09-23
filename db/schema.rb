@@ -37,12 +37,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_195452) do
     t.float "price"
     t.integer "trip_duration"
     t.integer "group_size"
-    t.string "type"
+    t.string "travel_type"
     t.integer "rating"
     t.bigint "place_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["place_id"], name: "index_travels_on_place_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,5 +59,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_195452) do
 
   add_foreign_key "reservations", "travels"
   add_foreign_key "reservations", "users"
-  add_foreign_key "travels", "places"
 end
