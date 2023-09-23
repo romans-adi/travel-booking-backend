@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_22_195452) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_23_200502) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_22_195452) do
     t.float "price"
     t.integer "trip_duration"
     t.integer "group_size"
-    t.string "type"
+    t.string "travel_type"
     t.integer "rating"
     t.bigint "place_id", null: false
     t.datetime "created_at", null: false
