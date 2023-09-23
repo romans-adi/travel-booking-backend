@@ -1,3 +1,3 @@
 class Travel < ApplicationRecord
-  has_many :places
+  has_many :places, through: :reservations
 end
