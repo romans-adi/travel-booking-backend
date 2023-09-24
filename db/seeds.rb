@@ -56,7 +56,7 @@ places_data = [
 places_data.each do |place_data|
   place = Place.create(place_data)
     case place.name
-    when 'Paris'
+    when 'Explore the Charm of Paris'
       travel = Travel.create(
         price: Faker::Number.decimal(l_digits: 2),
         trip_duration: Faker::Number.between(from: 1, to: 15),
