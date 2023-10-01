@@ -1,6 +1,8 @@
 class Api::V1::ReservationsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @reservations = Reservation.all
+    @reservations = current_user.reservations
     render json: @reservations
   end
 
@@ -11,6 +13,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
     if @reservation.save
       render json: @reservation, status: :created
     else
