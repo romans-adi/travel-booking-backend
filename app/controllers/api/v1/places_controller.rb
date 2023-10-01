@@ -1,4 +1,7 @@
 class Api::V1::PlacesController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
   def index
     @places = Place.all
     render json: @places
@@ -7,5 +10,20 @@ class Api::V1::PlacesController < ApplicationController
   def show
     @place = Place.includes(:travel).find(params[:id])
     render json: @place
+  end
+
+  def create
+    @place = Place.new(place_params)
+    if @place.save
+      render json: @place, status: :created
+    else
+      render json: @place.errors, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def place_params
+    params.require(:place).permit(:name, :description, :main_picture)
   end
 end
