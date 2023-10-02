@@ -1,5 +1,4 @@
 class Api::V1::TravelsController < ApplicationController
-  load_and_authorize_resource
   
   def index
     @travels = Travel.all
@@ -17,6 +16,15 @@ class Api::V1::TravelsController < ApplicationController
       render json: @travel, status: :created
     else
       render json: @travel.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @travel = Travel.find(params[:id])
+    if @travel.destroy
+      render json: { message: "Travel ##{params[:id]} was successfully deleted" }, status: :ok
+    else
+      render json: { error: "Failed to delete travel" }, status: :unprocessable_entity
     end
   end
 
