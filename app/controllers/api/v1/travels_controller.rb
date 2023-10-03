@@ -1,4 +1,6 @@
 class Api::V1::TravelsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @travels = Travel.all
     render json: @travels
@@ -30,6 +32,6 @@ class Api::V1::TravelsController < ApplicationController
   private
 
   def travel_params
-    params.require(:travel).permit(:price, :trip_duration, :group_size, :rating, :travel_type, :place_id)
+    params.require(:travel).permit(:name, :image, :price, :trip_duration, :group_size, :rating, :travel_type, :place_id)
   end
 end
