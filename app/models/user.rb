@@ -15,10 +15,10 @@ class User < ApplicationRecord
   end
 
   def agency?
-    self.role == "agency"
+    self.role == 'agency'
   end
 
   def user?
-    self.role == "user"
+    self.role == 'user'
   end
 end

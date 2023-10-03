@@ -28,10 +28,10 @@ gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 gem 'rack-cors'
 
 # Authentication and Authorization
+gem 'cancancan'
 gem 'devise'
 gem 'devise-jwt'
 gem 'fast_jsonapi'
-gem 'cancancan'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

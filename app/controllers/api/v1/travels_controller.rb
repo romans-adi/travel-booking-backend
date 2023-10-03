@@ -1,5 +1,4 @@
 class Api::V1::TravelsController < ApplicationController
-  
   def index
     @travels = Travel.all
     render json: @travels
@@ -24,7 +23,7 @@ class Api::V1::TravelsController < ApplicationController
     if @travel.destroy
       render json: { message: "Travel ##{params[:id]} was successfully deleted" }, status: :ok
     else
-      render json: { error: "Failed to delete travel" }, status: :unprocessable_entity
+      render json: { error: 'Failed to delete travel' }, status: :unprocessable_entity
     end
   end
 

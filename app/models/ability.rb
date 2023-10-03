@@ -7,9 +7,7 @@ class Ability
       can :manage, Travel
     end
 
-    if user.user?
-      can :manage, Reservation
-    end
+    can :manage, Reservation if user.user?
 
     can :read, Place
     can :read, Travel
