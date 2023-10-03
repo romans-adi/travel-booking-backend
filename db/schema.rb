@@ -42,6 +42,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_01_165438) do
     t.bigint "place_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
