@@ -27,6 +27,8 @@ gem 'jquery-rails', '~> 4.4', '>= 4.4.0'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+# Authentication and Authorization
+gem 'cancancan'
 gem 'devise'
 gem 'devise-jwt'
 gem 'fast_jsonapi'
