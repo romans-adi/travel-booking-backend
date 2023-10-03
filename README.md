@@ -2,6 +2,8 @@
 
 # <a name="about-project"> Traveli Backend </a>
 
+The Traveli app is a comprehensive travel management platform that caters to both individual users and travel agencies. With an intuitive backend system, it allows users to plan and customize their dream vacations while offering agencies the tools they need to create enticing travel packages.
+
 This project serves as the API backend for the [Traveli](https://github.com/romans-adi/travel-booking-frontend) project.
 
 <!-- TABLE OF CONTENTS -->
@@ -38,10 +40,17 @@ This project serves as the API backend for the [Traveli](https://github.com/roma
 
 ## ✨ Key Features<a name="key-features"></a>
 
-- [x] Greetings are stored in the database's table using PostgreSQL.
-- [x] Routes are configured to receive data via the root "/" path.
-- [x] Rack CORS is set up to allow external applications to use the API endpoint with the GET request method.
-- [x] Pre-determined Places data is populated using database seeds.
+- **Database Schema**: The project includes an auto-generated database schema using ActiveRecord, with tables for "places," "travels," "reservations," and "users." This schema captures essential data for a travel booking platform.
+
+- **API Endpoints**: The Rails application defines API endpoints for various actions. These endpoints include functionalities for places, travels, reservations, and users, enabling users to interact with the platform.
+
+- **User Authentication**: The application utilizes Devise for user authentication, providing features such as user registration, login, and logout. It also includes JWT-based authentication for secure access to protected endpoints.
+
+- **Authorization**: The project implements role-based authorization using CanCanCan, ensuring that users have the appropriate permissions to perform specific actions. For instance, agencies can manage places and travels, while regular users can create reservations.
+
+- **CORS Configuration**: To handle Cross-Origin Resource Sharing (CORS), the application has a middleware configuration allowing cross-origin AJAX requests. This facilitates interactions with the API from frontend applications.
+
+- **Data Seeding**: The project includes data seeding using Faker gem. It populates the database with sample data for places and associated travels, which can be used for testing and demonstration purposes.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +129,7 @@ rails db:migrate
 
 This will create the database and apply migrations.
 
-3. You have to populate the database with messages:
+3. You have to populate the database with data seeds:
 
 ```
 rails db:seed
@@ -187,19 +196,15 @@ If problems persist, you can refer to the official [Ruby on Rails Guides](https:
 - GitHub: [@romans-adi](https://github.com/romans-adi/)
 - LinkedIn: [Romans Špiļaks](https://www.linkedin.com/in/obj513/)
 
-👤 **Mohamed Gamil Eldimardash**
-
-- GitHub: [@github](https://github.com/MMGGYY66)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohamed-eldimardash-0023a3b5/)
-- Twitter: [twitter](https://twitter.com/MOHAMEDELDIMARd)
-- Facebook: [facebook](https://www.facebook.com/MOHAMED.ELDIMARDASH/)
-- StackOverflow: [stackoverflow](https://stackoverflow.com/users/13605630/mohamed-gamil-eldimardash)
+- We extend our special thanks to [Mohamed Gamil Eldimardash](https://github.com/MMGGYY66) for his valuable contributions to the initial stages of our project, where he played a crucial role in creating models and establishing relations in the backend.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🌟 Future Features <a name="future-features"></a>
 
-- [ ] Add more endpoints.
+- **User Profiles**: Use the "/users" endpoint to retrieve the current user's profile information, enhancing the user experience and personalization (for users).
+- **Travel Packages**: Update the existing schema and enhance the relationship between Travels and Places to enable the creation of "Travel Packages" (for agencies).
+- **Improve Styles**: Incorporate animations and enhance the website's dynamics to make it more visually engaging and lively.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -207,7 +212,7 @@ If problems persist, you can refer to the official [Ruby on Rails Guides](https:
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-I welcome contributions to enhance the functionality and user experience of the Traveli Application. If you have any ideas, suggestions, or bug reports, feel free to open an issue or submit a pull request. Let's share ideas!
+We welcome contributions to enhance the functionality and user experience of the Traveli application. If you have any ideas, suggestions, or bug reports, feel free to open an issue or submit a pull request. Let's share ideas!
 
 If you'd like to contribute to this project, please follow these steps:
 
@@ -234,9 +239,9 @@ Furthermore, if you would like to get in touch with me, you can find our contact
 
 ## 🌲 Acknowledgements <a name="acknowledgments"></a>
 
-I would like to thank the following individuals and projects for their contributions and inspiration:
+We would like to thank the following individuals and projects for their contributions and inspiration:
 
-[Ruby official](https://www.ruby-lang.org/) :  Special thanks to Yukihiro Matsumoto, the creator of the Ruby programming language, for giving me this powerful and elegant tool to build amazing applications. I am also grateful to the Ruby Core Team and the passionate Ruby community for their continuous support and contributions.
+[Ruby official](https://www.ruby-lang.org/) :  Special thanks to Yukihiro Matsumoto, the creator of the Ruby programming language, for giving me this powerful and elegant tool to build amazing applications. We are also grateful to the Ruby Core Team and the passionate Ruby community for their continuous support and contributions.
 
 [Ruby on Rails](https://rubyonrails.org/): A big thank you to the creators, contributors, and maintainers of the Ruby on Rails framework. Your efforts have empowered countless developers to build powerful and scalable web applications.
 
