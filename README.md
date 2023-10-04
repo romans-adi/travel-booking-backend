@@ -41,18 +41,23 @@ This project serves as the API backend for the [Traveli](https://github.com/roma
 ## ✨ Key Features<a name="key-features"></a>
 
 - **Database Schema**: The project includes an auto-generated database schema using ActiveRecord, with tables for "places," "travels," "reservations," and "users." This schema captures essential data for a travel booking platform.
-
 - **API Endpoints**: The Rails application defines API endpoints for various actions. These endpoints include functionalities for places, travels, reservations, and users, enabling users to interact with the platform.
-
 - **User Authentication**: The application utilizes Devise for user authentication, providing features such as user registration, login, and logout. It also includes JWT-based authentication for secure access to protected endpoints.
-
 - **Authorization**: The project implements role-based authorization using CanCanCan, ensuring that users have the appropriate permissions to perform specific actions. For instance, agencies can manage places and travels, while regular users can create reservations.
-
 - **CORS Configuration**: To handle Cross-Origin Resource Sharing (CORS), the application has a middleware configuration allowing cross-origin AJAX requests. This facilitates interactions with the API from frontend applications.
-
 - **Data Seeding**: The project includes data seeding using Faker gem. It populates the database with sample data for places and associated travels, which can be used for testing and demonstration purposes.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🌐 Live Demo
+
+Explore the live demo of the Traveli App to see it in action:
+
+[TravelBooking Live Demo](https://traveli.onrender.com/)
+
+Feel free to interact with the application to get a firsthand experience of its features and functionalities. Please note that the live demo represents a snapshot of the project and may not include all the latest updates and features. For the most up-to-date version of the application, you can refer to the GitHub repository.
 
 <!-- GETTING STARTED -->
 
