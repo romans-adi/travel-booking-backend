@@ -12,6 +12,6 @@ test:
 
 production:
   <<: *default
-  database: travel_booking_backend_production
-  username: travel_booking_backend
+  database: toqolvdk
+  username: toqolvdk
   password: <%= ENV["TRAVEL_BOOKING_BACKEND_DATABASE_PASSWORD"] %>
