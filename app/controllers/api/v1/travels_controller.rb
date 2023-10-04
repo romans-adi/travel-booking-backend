@@ -1,6 +1,6 @@
 class Api::V1::TravelsController < ApplicationController
-  before_action :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_user!, except: %i[index show]
+  load_and_authorize_resource except: %i[index show]
   def index
     @travels = Travel.all
     render json: @travels
