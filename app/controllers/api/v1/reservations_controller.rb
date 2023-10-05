@@ -23,7 +23,7 @@ class Api::V1::ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
-    
+
     if @reservation.destroy
       head :no_content
     else
