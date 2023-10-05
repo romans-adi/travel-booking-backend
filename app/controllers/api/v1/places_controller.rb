@@ -1,15 +1,15 @@
 class Api::V1::PlacesController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
-  load_and_authorize_resource except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource except: [:index, :show]
 
   def index
     @places = Place.all
-    render json: @places
+    render json: @places, status: :ok
   end
 
   def show
     @place = Place.includes(:travel).find(params[:id])
-    render json: @place
+    render json: @place, status: :ok
   end
 
   def create
