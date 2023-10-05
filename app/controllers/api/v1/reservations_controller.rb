@@ -22,9 +22,16 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation = Reservation.find(params[:id])
-    @reservation.destroy
-    head :no_content
+    @reservation = Reservation.find_by(id: params[:id])
+
+    if @reservation.nil?
+      render json: { error: 'Reservation not found' }, status: :not_found
+    elsif @reservation.user_id != current_user.id
+      render json: { error: 'You are not authorized to delete this reservation' }, status: :forbidden
+    else
+      @reservation.destroy
+      head :no_content
+    end
   end
 
   private
