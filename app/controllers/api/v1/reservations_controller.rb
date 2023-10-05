@@ -23,8 +23,12 @@ class Api::V1::ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
-    @reservation.destroy
-    head :no_content
+    
+    if @reservation.destroy
+      head :no_content
+    else
+      render json: { error: 'Failed to destroy the reservation' }, status: :unprocessable_entity
+    end
   end
 
   private
