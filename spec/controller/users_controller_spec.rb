@@ -41,8 +41,11 @@ RSpec.describe 'Api::V1::UsersController', type: :request do
           post '/signup', params: invalid_params
         end.not_to change(User, :count)
 
+        expected_message = "User couldn't be created successfully. Password confirmation doesn't match Password"
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(JSON.parse(response.body)).to include("status" => {"message"=>"User couldn't be created successfully. Password confirmation doesn't match Password"})
+        expect(JSON.parse(response.body)).to include(
+          'status' => { 'message' => expected_message }
+        )
       end
     end
   end

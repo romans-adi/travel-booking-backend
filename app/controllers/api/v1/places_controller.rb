@@ -1,6 +1,6 @@
 class Api::V1::PlacesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  load_and_authorize_resource except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
+  load_and_authorize_resource except: %i[index show]
 
   def index
     @places = Place.all

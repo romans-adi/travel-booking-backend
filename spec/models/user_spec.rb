@@ -6,9 +6,10 @@ RSpec.describe 'user', type: :model do
                   name: 'John Doe',
                   email: 'example@example.com',
                   password: 'password',
-                  password_confirmation: 'password'})
-    end
-  
+                  password_confirmation: 'password'
+                })
+  end
+
   describe 'validations' do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
