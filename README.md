@@ -213,6 +213,20 @@ We extend our special thanks to [Mohamed Gamil Eldimardash](https://github.com/M
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- KANBAN BOARD -->
+
+## :orange_book: Kanban Board <a name="kanban"></a>
+
+[Here](https://github.com/users/romans-adi/projects/2/views/1) you can find our Kanban Board.
+
+The initial state of our board:
+
+![Kanban Initial State](https://user-images.githubusercontent.com/83185550/269739351-fdc966b5-916b-47b1-b180-27c20cd55a48.png)
+
+We completed a project as a duo (a team of 2 people). One task was completed by a teammate who left the project on the second working day.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
