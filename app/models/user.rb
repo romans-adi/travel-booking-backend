@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :reservations
 
   validates :name, presence: true
+  validates :email, presence: true
+  validates :role, presence: true
 
   enum role: %i[user agency]
   after_initialize :set_default_role, if: :new_record?
