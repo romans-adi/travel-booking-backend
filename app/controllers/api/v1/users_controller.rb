@@ -7,10 +7,12 @@ class Api::V1::UsersController < ApplicationController
     if @api_v1_user.present?
       render json: { success: true, users: @api_v1_user }
     else
-      render json: { success: false, message: 'No Users Found' }
+      render json: { success: false, message: 'No Users Found' }, status: :not_found
     end
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { success: false, message: e.message }, status: :not_found
   rescue StandardError => e
-    render json: { success: false, message: e.message }
+    render json: { success: false, message: e.message }, status: :internal_server_error
   end
 
   # GET /api/v1/users/1
@@ -40,7 +42,15 @@ class Api::V1::UsersController < ApplicationController
 
   # DELETE /api/v1/users/1
   def destroy
-    @api_v1_user.destroy
+    if @api_v1_user.destroy
+      render json: { success: true, message: 'User successfully deleted' }
+    else
+      render json: { success: false, message: 'Failed to delete user' }, status: :unprocessable_entity
+    end
+  rescue ActiveRecord::RecordNotFound => e
+    render json: { success: false, message: e.message }, status: :not_found
+  rescue StandardError => e
+    render json: { success: false, message: e.message }, status: :internal_server_error
   end
 
   private
