@@ -11,7 +11,4 @@ test:
   database: travel_booking_backend_test
 
 production:
-  <<: *default
-  database: wxmwhxdp
-  username: wxmwhxdp
-  password: <%= ENV["TRAVEL_BOOKING_BACKEND_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
