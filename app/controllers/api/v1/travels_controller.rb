@@ -3,12 +3,12 @@ class Api::V1::TravelsController < ApplicationController
   load_and_authorize_resource except: %i[index show]
   def index
     @travels = Travel.all
-    render json: @travels
+    render json: @travels, status: :ok
   end
 
   def show
     @travel = Travel.find(params[:id])
-    render json: @travel
+    render json: @travel, status: :ok
   end
 
   def create

@@ -23,7 +23,6 @@ class Api::V1::ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find_by(id: params[:id])
-
     if @reservation.nil?
       render json: { error: 'Reservation not found' }, status: :not_found
     elsif @reservation.user_id != current_user.id
